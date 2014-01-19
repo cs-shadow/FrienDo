@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=100%, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>Parse JavaScript Todo App</title>
+    <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="css/todos.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/todos.js"></script>
+
+<script>
+Parse.initialize("FVpie19EZBySUXoKGLZn8wHD3powe0b6LiHSJRNE", "ze72Ly718Zhw39qLU0RJy2qq04Jhyw0zsACCCWAw"); 
+</script>
+
+    
+  </head>
+
+  <body>
+
+    <!-- Todo App Interface -->
+
+    <div id="todoapp">
+      <div class="title">
+        <h1>My Todos</h1>
+      </div>
+
+      <div class="content">
+      </div>
+    </div>
+    
+
+    <!-- Templates -->
+
+    <script type="text/template" id="manage-todos-template">
+      <div id="user-info">
+        Signed in as <%= Parse.User.current().get("username") %> (<a href="#" class="log-out">Log out</a>)
+      </div>
+
+      <div class="section">
+
+        <header id="header">
+        </header>
+
+        <div id="main">
+          <input id="toggle-all" type="checkbox">
+          <label for="toggle-all">Mark all as complete</label>
+          
+          <ul id="todo-list">
+            <img src='images/spinner.gif' class='spinner' />
+          </ul>
+        </div>
+
+        <div id="todo-stats"></div>
+      </div>
+    </script>
+
+    <script type="text/template" id="item-template">
+      <li class="<%= done ? 'completed' : '' %>">
+	<div class="view">
+	  <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %>>
+	  <label class="todo-content"><%= content %></label>
+	  <button class="todo-destroy"></button>
+	</div>
+	<input class="edit" value="<%= content %>">
+      </li>
+    </script>
+
+    <script type="text/template" id="stats-template">
+      <footer id="footer">
+	<span id="todo-count"><strong><%= remaining %></strong> <%= remaining == 1 ? 'item' : 'items' %> left</span>
+	<ul id="filters">
+	  <li>
+	    <a href="javascript:void(0)" id="all" class="selected">All</a>
+	  </li>
+	  <li>
+	    <a href="javascript:void(0)" id="active">Active</a>
+	  </li>
+	  <li>
+	    <a href="javascript:void(0)" id="completed">Completed</a>
+	  </li>
+	</ul>
+	<button id="clear-completed">Clear completed (<%= done %>)</button>
+      </footer>
+
+    </script>
+
+    <div id="newsfeed"></div>
+    <script type="text/javascript">
+     
+      var feed = [
+        { "firstName":"John" , "lastName":"Doe", "desc":"I'm going for pizza" }, 
+        { "firstName":"Anna" , "lastName":"Smith", "desc":"I'm going for movie" }, 
+        { "firstName":"Peter" , "lastName":"Jones", "desc":"I'm going for adaksdb" }
+      ];
+    
+      var temp=[];
+     var count = Object.keys(feed).length;
+     
+     for(var i=0;i<count;i++)
+     {
+        var obj = feed[i];
+        for(var key in obj){
+
+            var attrName = key;
+            var attrValue = obj[key];
+            temp.push(attrValue);
+            
+            //document.getElementById("newsfeed").innerHTML += temp;
+        }
+        document.getElementById("newsfeed").innerHTML += temp.toString() + '<br/>';
+        temp = [];
+     }
+     </script>
+    
+
+  </body>
+
+</html>

@@ -1,0 +1,837 @@
+body
+{
+	font-family: 'Merriweather', serif !important;
+	font-size: 16px;
+	background-image: url('../images/bg.jpg');
+	background-color: whitesmoke;
+}
+
+#n2b2
+{
+	background: #bbb !important;	
+}
+
+#n2b2 a
+{
+	background: #999;
+	padding: 5px;
+	border-radius: 2px;
+}
+
+.msg_read
+{
+	background-color: #fff;
+	border-bottom: 1px solid;
+	border-bottom-color: #ddd;
+}
+
+.msg_unreadG
+{
+	background-color: #eee;
+}
+
+.msg_read:hover, .msg_unread:hover
+{
+	background-color: #ddd;
+}
+
+.notify
+{
+	color: red;
+}
+
+.trigger
+{
+	color: #1133FF;
+	cursor: pointer;
+	margin-bottom: 50px;
+}
+
+.header .sixteen.columns
+{
+	height: 150px;
+	background-image: url('../images/cover.jpg');
+	background-size: 940px 150px;
+}
+
+.header .sixteen.columns .profile-pic
+{
+	float: left;
+	height: 100px;
+	width: 100px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.header .sixteen.columns .profile-pic img
+{
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #999;
+}
+
+.header .sixteen.columns .connections
+{
+	padding-top: 20px;
+	margin-right: 20px;
+	float: right;
+	color: #ddd;
+}
+
+.header .profile-pic .change-picture
+{
+	margin-top: -75px;
+	margin-left: 13px;
+}
+
+.header .profile-pic .change-picture a
+{
+	text-decoration: none;
+}
+
+.header .sixteen.columns .profile-page.connections
+{
+	padding-top: 80px;
+	margin-right: 40px;
+	float: right;
+	color: #ddd;
+	width: 100px;
+}
+
+.header .sixteen.columns .changecover
+{
+	padding-right: 10px;
+	padding-bottom: 40px;
+}
+
+.right.sidebar
+{
+	height: 200px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	padding-right: 20px;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.profile
+{
+	margin-bottom: 50px;
+}
+
+.profile .label
+{
+	font-weight: bold;
+}
+
+.profile .connected
+{
+	padding-bottom: 20px;
+	margin-left: 120px;
+}
+
+.profile .email
+{
+	clear: left;
+}
+
+.topbar {
+	padding: 5px;
+}
+
+.topbar .info {
+	float: left;
+	font-size: 25px;
+	padding: 5px;
+	color: orange;
+}
+
+.topbar .links {
+	float: right;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.topbar .links a {
+	padding: 10px;
+	text-decoration: none;
+	color: #bbb;
+}
+
+.topbar .links a:hover {
+	background: #444;
+	color: #fff;
+}
+
+#login_form, #register_form {
+	display: none;
+	position: absolute;
+	top: 5px;
+	right: 100px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #888;
+	padding-left: 5px;
+}
+
+.backstretch {
+	height: 300px;
+	width: 100%;
+	background-image: url('../images/back_2.png');
+	background-size: 100%;
+}
+
+.description {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.heading
+{
+	color: white;
+	background: #3399FF;
+	padding: 5px;
+	padding-left: 20px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+.description .heading {
+	padding: 40px;
+	font-size: 30px;
+	color: #ff3300;
+	text-shadow: 2px 1px #bbb;
+}
+
+.description .desc_body {
+	columns:200px 3;
+	-webkit-columns:200px 3; /* Safari and Chrome */
+	-moz-columns:200px 3; /* Firefox */
+}
+
+.login_reg .w2p_fc, .login_reg .w2p_fl {
+	display: none;
+}
+
+.login_reg {
+	padding-top: 10px;
+}
+
+ input[type=submit] {
+	width: 60%;
+	padding: 10px;
+	color: white;
+	background-color: #3B5998;
+	text-shadow: none;
+}
+
+ input[type=text],  input[type=password], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  display: block;
+  outline: none;
+  border: 1px solid #DDDDDD;
+}
+ 
+ input[type=text]:focus,  input[type=password]:focus, textarea:focus{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.footer
+{
+	height: 10% !important;
+	padding: 0;
+	padding: 20px;
+}
+
+.copyright
+{
+	float: right;
+	padding-right: 20px;
+}
+
+.msg_header_items a
+{
+	float: left;
+	width: 100px;
+	text-align: center;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-decoration: none;
+	color: black;
+}
+
+.msg_header_items.selected a
+{
+	background: #eee;
+	border: 1px solid;
+	border-radius: 5px;
+	border-color: white;
+	width: 98px;
+}
+
+.msg_header_items a:hover
+{
+	background: #ccc;
+	border: 1px solid;
+	border-radius: 5px;
+	border-color: white;
+	color: white;
+	width: 98px;
+}
+
+.msg_header .msg_ctr
+{
+	float: left;
+	margin-left: -20px;
+	width: 20px;
+	text-align: center;
+	border-radius: 10px;
+	background: #FF3333;
+	margin-top: -10px;
+	color: white;
+}
+
+.message
+{
+	clear: both;
+	width: 700px;
+	margin-left;
+}
+
+.message .msg_inbox
+{
+	border: 2px solid;
+	border-bottom-width: 1px;
+	border-color: #ddd;
+}
+
+.message .msg_inbox .sender
+{
+	width: 200px;
+	float: left;
+	height: 60px;
+	display: block;
+}
+
+.message .msg_desc
+{
+	width: 596px;
+	height: 50px;
+	clear: right;
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding-top: 10px;
+	margin-left: 100px;
+}
+
+.message .sender .profile_pic
+{
+	margin: 10px;
+	float: left;
+}
+
+.message .sender .name
+{
+	margin-top: 5px;
+	font-family: 'Merriweather', sans;
+	font-size: 14px;
+}
+
+.message .sender .name a
+{
+	text-decoration: none;
+}
+
+.message .sender .uname a
+{
+	color: black;
+}
+
+.individual_msg
+{
+	background-color: white;
+	min-height: 300px;
+}
+
+.individual_msg .msg_body
+{
+	width: 450px;
+	margin-left: 150px;
+	margin-top: 20px;
+}
+
+.individual_msg .msg_body .topic
+{
+	padding-bottom: 20px;
+	font-family: 'Merriweather', sans;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.other_person_pic
+{
+	float: left;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+.other_person_pic img
+{
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+}
+
+.compose_msg
+{
+	background: white;
+	padding: 10px;
+}
+
+.compose_msg .user_pic
+{
+	float: left;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+.compose_msg .user_pic img
+{
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+}
+
+.compose_msg .form
+{
+	margin-left: 180px;
+	width: 450px;
+}
+
+.compose_msg .form .w2p_fl
+{
+	padding: 5px;	
+}
+
+.compose_msg .form .w2p_fw
+{
+	padding-bottom: 10px;	
+}
+
+.compose_msg .form label
+{
+	font-weight: normal;
+	font-family: 'Merriweather', sans;
+	font-size: 14px;
+}
+
+.compose_msg .form input[type=text]
+{
+	width: 500px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+}
+ 
+.compose_msg .form input[type=text]:focus
+{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.compose_msg .form textarea
+{
+	width: 500px;
+	height: 100px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+}
+ 
+.compose_msg .form textarea:focus
+{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.compose_msg .form #submit_record__row
+{
+	text-align: right;
+}
+
+.compose_msg .form input[type=submit]
+{
+	width: 100px;
+	background: #FF3333;
+	text-shadow: none;
+	font-weight: normal;
+	color: #eee;
+}
+
+.profile-page
+{
+	width: 600px;
+}
+
+.profile-page.info
+{
+	color: white;
+	float: left;
+	margin-top: 50px;
+	margin-left: 30px;
+	font-family: 'Merriweather', sans;
+}
+
+.profile-page.info .name
+{
+	font-size: 20px;
+}
+
+.profile-page.info .location
+{
+	font-size: 14px;
+}
+
+.profile .desc
+{
+	background: white;
+	padding: 15px;
+	padding-bottom: 20px;
+}
+
+.profile .topic, .profile-page .topic, .create-event .topic
+{
+	font-family: 'Merriweather', sans;
+	font-size: 24px;
+	color: #666;
+	padding-bottom: 10px;
+}
+
+.profile .basic_info
+{
+	margin-bottom: 40px;
+}
+
+.profile .experience #hospital, .profile .education #institute
+{
+	color: #1133FF;
+}
+
+.profile #date
+{
+	color: #777;
+	font-size: 12px;
+	font-family: 'Merriweather', sans;
+	margin-bottom: 10px;
+}
+
+.profile-page .basic-info
+{
+	margin-bottom: 20px;
+}
+
+.profile-page .basic-info, .profile-page .edu-exp
+{
+	background: white;
+}
+
+.profile-page .basic-info, .profile-page .edu-exp
+{
+	padding: 20px;
+}
+
+.profile-page input[type=text]
+{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  width: 200px;
+}
+ 
+.profile-page input[type=text]:focus 
+{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.profile-page textarea
+{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  width: 300px;
+  height: 100px;
+}
+ 
+.profile-page textarea:focus
+{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.profile-page s, .event-form #elect
+{
+	width: 150px;
+	padding: 5px;
+}
+
+.profile-page .w2p_fl
+{
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+
+.profile-page input[type=submit]
+{
+	margin-left: 400px;
+	background: #FF3333;
+	text-shadow: none;
+	font-weight: normal;
+	color: #eee;
+	box-shadow: none;
+	border: none;
+}
+
+.profile-page .edu-exp input[type=submit]
+{
+	margin-left: 300px;
+}
+
+.profile-page input[type=submit]:hover
+{
+	background: #f22;
+	color: #fff;
+}
+
+.profile-page label
+{
+	font-size: 14px;
+}
+
+.profile-page #basic_info_first_name__row, .profile-page #basic_info_email__row, .profile-page #basic_info_phone_no__row
+{
+	float: left;
+	margin-right: 20px;
+}
+
+.profile-page #basic_info_email__row .w2p_fw
+{
+	width: 200px;
+	padding-right: 10px;
+}
+
+.connections .changecover button, .header .profile-pic .change-picture button
+{
+	background: #DD3333;
+	text-shadow: none;
+	font-weight: normal;
+	color: #eee;
+	box-shadow: none;
+	border: none;
+}
+
+.connections .changecover button:hover, .header .profile-pic .change-picture button:hover
+{
+	background: #f22;
+	color: #fff;
+}
+
+.create-event
+{
+	width: 700px;
+}
+
+.event-form
+{
+	background: white;
+	float: left;
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+	width: 670px;
+}
+
+.event-form input[type=text], .event-form textarea
+{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  width: 400px;
+}
+ 
+.event-form input[type=text]:focus, .event-form textarea:focus
+{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.event-form textarea
+{
+	height: 100px;
+}
+
+.event-form .user_pic
+{
+	float: left;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+.event-form .user_pic img
+{
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+}
+
+.event-form .form
+{
+	margin-left: 180px;
+	width: 450px;
+}
+
+.event-form .form .w2p_fl
+{
+	padding: 5px;	
+}
+
+.event-form .form .w2p_fw
+{
+	padding-bottom: 10px;	
+}
+
+.event-form .form label
+{
+	font-weight: normal;
+	font-family: 'Merriweather', sans;
+	font-size: 14px;
+}
+
+.event-form select
+{
+	width: 200px;
+	padding: 5px;
+}
+
+.event-form #events_City__row, .event-form #events_Country__row, .event-form #events_Starts_At__row, .event-form #events_Ends_At__row, .event-form #events_Event_Type__row, .event-form #events_Category__row
+{
+	width: 200px;
+	margin-right: 20px;
+	float: left;
+}
+
+.event-form input[type=submit]
+{
+	margin-top: 20px;
+	margin-left: 350px;
+	background: #FF3333;
+	text-shadow: none;
+	font-weight: normal;
+	color: #eee;
+	box-shadow: none;
+	border: none;
+}
+
+.event-form input[type=submit]:hover
+{
+	background: #f22;
+	color: #fff;
+}
+
+.event .topic
+{
+	font-family: 'Merriweather', sans;
+	font-size: 16px;
+}
+
+.event .place, .event .date
+{
+	font-size: 12px;
+}
+
+.event .place-time
+{
+	color: #777;
+	font-size: 13px;
+}
+
+.event #going_button form
+{
+	margin-bottom: 0;
+}
+
+.event #going_button .w2p_fw
+{
+	padding-bottom: 0;
+}
+
+.event #going_button input[type=submit]
+{
+	margin-left: 330px;
+	background: #FF3333;
+	text-shadow: none;
+	font-weight: normal;
+	color: #eee;
+	box-shadow: none;
+	border: none;
+	width: 100px;
+}
+
+.event #going_button input[type=submit]:hover
+{
+	background: #f22;
+	color: #fff;
+}
+
+.event #invite_form input[type=text]
+{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  width: 200px;
+}
+ 
+.event #invite_form input[type=text]:focus
+{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}

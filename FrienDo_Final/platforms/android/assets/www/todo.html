@@ -1,0 +1,138 @@
+<html>
+	
+		<head>
+			<script src="js/jquery.min.js"></script>
+			<link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/new1.js"></script>
+			<script type="text/javascript">
+
+			array=["bomm","sadsaasd"];
+		
+			</script>
+			<title>Todo</title>
+			<script type="text/javascript">
+		
+function send_todo()
+{
+	var promisesPhase1 = [];
+
+  var mes = document.forms["todo-form"]["ttext"].value;
+  var user=localStorage.getItem('username');
+  //alert(mes +","+ des);
+  var Employee = Parse.Object.extend({
+      className: "Todo"
+  });
+
+  var EmployeeCollection = Parse.Collection.extend({
+      model: Employee
+  });
+
+  var employees = new EmployeeCollection(
+      [
+      {"todo": mes , "User" : user, "numval": 0}
+      ]
+  );
+
+  employees.each(function(employee) {
+      promisesPhase1.push(employee.save());
+  });
+
+}
+			</script>
+			
+		</head>
+	<body>
+
+<div id ='n2b2' style='background: gray; padding: 10px; margin-bottom: 40px;'>
+<a href="todo.html">todo</a>
+<a href="view_todo.html">All todo</a>
+<a href="All_broad.html">All_broad</a>
+<a href="broadcast.html">broadcast</a>
+<a href="submit.html">home</a>
+</div>
+		
+		<h2>Create a todo item</h2>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+    $("#todo-form").submit(function(e){
+      e.preventDefault();
+      send_todo();
+    //window.location.assign('todo.html');
+    });
+    });
+			</script>
+	<form id="todo-form" class="todo-form" >
+<div class='form-group'>
+		<input type="text" id="textfield" name="ttext">
+		<input type="submit" value="Create Todo List" onclick="submitted()" >
+</div>	</form>
+
+	
+	<script type="text/javascript">
+	
+	function submitted(){
+	
+	if(todo.textfield.value)
+	{	
+		array.push(todo.textfield.value);
+	//	populate("lists",array);
+	}
+	}
+
+	</script>
+	<div id="lists"></div>
+
+	<script type="text/javascript">
+
+	
+	//populate("lists",array);
+
+    function populate(slct2,optionArray){
+
+    var s2 = document.getElementById(slct2);
+    s2.innerHTML = "";
+
+    //option array to be filled dynamically
+    //var optionArray = ["Subcat1","Subcat1.1","Subcat1.2"];
+
+    for (var option in optionArray) {
+            if (optionArray.hasOwnProperty(option)) {
+                var pair = optionArray[option];
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.name = pair;
+                checkbox.value = pair;
+                s2.appendChild(checkbox);
+        
+
+                var label = document.createElement('label');
+                label.htmlFor = pair;
+                label.appendChild(document.createTextNode(pair));
+
+                s2.appendChild(label);
+                s2.appendChild(document.createElement("br"));    
+            }
+        }
+    }
+
+    function test() {
+
+    var cboxes = document.getElementById('lists');
+    var len = cboxes.length;
+    alert(len);
+    for (var i=0; i<len; i++) {
+    	if(i == 0)
+    		cboxes[i].checked = true;
+        if(cboxes[i].checked)
+        	this.style.text-Decoration='line-through';
+    }
+
+    }
+
+    </script>
+
+</body>
+</html>

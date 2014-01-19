@@ -1,0 +1,249 @@
+<html>
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+
+    <title>Parse JavaScript Todo App</title>
+    <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="css/todos.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse-1.1.15.min.js"></script>
+    <script src="js/todos.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="js/styles.css">
+
+        <style type="text/css">
+/*      body
+      {
+        font-family: Helvetica, san-serif;
+        text-align: center;
+        font-size:24px;
+      }
+      div { padding: 128px 0 0 0; }*/
+    </style>
+    <script type="text/javascript">
+      // TOUCH-EVENTS SINGLE-FINGER SWIPE-SENSING JAVASCRIPT
+      // Courtesy of PADILICIOUS.COM and MACOSXAUTOMATION.COM
+      
+      // this script can be used with one or more page elements to perform actions based on them being swiped with a single finger
+    
+      var triggerElementID = null; // this variable is used to identity the triggering element
+      var fingerCount = 0;
+      var startX = 0;
+      var startY = 0;
+      var curX = 0;
+      var curY = 0;
+      var deltaX = 0;
+      var deltaY = 0;
+      var horzDiff = 0;
+      var vertDiff = 0;
+      var minLength = 72; // the shortest distance the user may swipe
+      var swipeLength = 0;
+      var swipeAngle = null;
+      var swipeDirection = null;
+      
+      // The 4 Touch Event Handlers
+      
+      // NOTE: the touchStart handler should also receive the ID of the triggering element
+      // make sure its ID is passed in the event call placed in the element declaration, like:
+      // <div id="picture-frame" ontouchstart="touchStart(event,'picture-frame');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+    
+      function touchStart(event,passedName) {
+        // disable the standard ability to select the touched object
+        event.preventDefault();
+        // get the total number of fingers touching the screen
+        fingerCount = event.touches.length;
+        // since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
+        // check that only one finger was used
+        if ( fingerCount == 1 ) {
+          // get the coordinates of the touch
+          startX = event.touches[0].pageX;
+          startY = event.touches[0].pageY;
+          // store the triggering element ID
+          triggerElementID = passedName;
+        } else {
+          // more than one finger touched so cancel
+          touchCancel(event);
+        }
+      }
+    
+      function touchMove(event) {
+        event.preventDefault();
+        if ( event.touches.length == 1 ) {
+          curX = event.touches[0].pageX;
+          curY = event.touches[0].pageY;
+        } else {
+          touchCancel(event);
+        }
+      }
+      
+      function touchEnd(event) {
+        event.preventDefault();
+        // check to see if more than one finger was used and that there is an ending coordinate
+        if ( fingerCount == 1 && curX != 0 ) {
+          // use the Distance Formula to determine the length of the swipe
+          swipeLength = Math.round(Math.sqrt(Math.pow(curX - startX,2) + Math.pow(curY - startY,2)));
+          // if the user swiped more than the minimum length, perform the appropriate action
+          if ( swipeLength >= minLength ) {
+            caluculateAngle();
+            determineSwipeDirection();
+            processingRoutine();
+            touchCancel(event); // reset the variables
+          } else {
+            touchCancel(event);
+          } 
+        } else {
+          touchCancel(event);
+        }
+      }
+    
+      function touchCancel(event) {
+        // reset the variables back to default values
+        fingerCount = 0;
+        startX = 0;
+        startY = 0;
+        curX = 0;
+        curY = 0;
+        deltaX = 0;
+        deltaY = 0;
+        horzDiff = 0;
+        vertDiff = 0;
+        swipeLength = 0;
+        swipeAngle = null;
+        swipeDirection = null;
+        triggerElementID = null;
+      }
+      
+      function caluculateAngle() {
+        var X = startX-curX;
+        var Y = curY-startY;
+        var Z = Math.round(Math.sqrt(Math.pow(X,2)+Math.pow(Y,2))); //the distance - rounded - in pixels
+        var r = Math.atan2(Y,X); //angle in radians (Cartesian system)
+        swipeAngle = Math.round(r*180/Math.PI); //angle in degrees
+        if ( swipeAngle < 0 ) { swipeAngle =  360 - Math.abs(swipeAngle); }
+      }
+      
+      function determineSwipeDirection() {
+        if ( (swipeAngle <= 45) && (swipeAngle >= 0) ) {
+          swipeDirection = 'left';
+        } else if ( (swipeAngle <= 360) && (swipeAngle >= 315) ) {
+          swipeDirection = 'left';
+        } else if ( (swipeAngle >= 135) && (swipeAngle <= 225) ) {
+          swipeDirection = 'right';
+        } else if ( (swipeAngle > 45) && (swipeAngle < 135) ) {
+          swipeDirection = 'down';
+        } else {
+          swipeDirection = 'up';
+        }
+      }
+      
+      function processingRoutine() {
+        var swipedElement = document.getElementById(triggerElementID);
+        if ( swipeDirection == 'left' ) {
+          // REPLACE WITH YOUR ROUTINES
+          javascript:scrollLeft();
+        } else if ( swipeDirection == 'right' ) {
+          // REPLACE WITH YOUR ROUTINES
+          javascript:scrollRight();
+        } else if ( swipeDirection == 'up' ) {
+          // REPLACE WITH YOUR ROUTINES
+        } else if ( swipeDirection == 'down' ) {
+          // REPLACE WITH YOUR ROUTINES
+        }
+      }
+    
+    </script>
+  </head>
+</head>
+<body>
+    <div id="swipeBox" ontouchstart="touchStart(event,'swipeBox');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);" style="position:relative;width:100%;height:100%;">
+    
+
+    
+        <div  id="container" class="page-container">
+
+            <div id="page1" class="transition page stage-center">
+                <h1>Page 1</h1>
+                    <div id="todoapp">
+                    <div class="title">
+                      <h1>My Todos</h1>
+                    </div>
+
+                    <div class="content">
+                    </div>
+                  </div>
+                  
+
+                  <!-- Templates -->
+
+                  <script type="text/template" id="manage-todos-template">
+                    <div id="user-info">
+                      Signed in as <%= Parse.User.current().get("username") %> (<a href="#" class="log-out">Log out</a>)
+                    </div>
+
+                    <div class="section">
+
+                      <header id="header">
+                      </header>
+
+                      <div id="main">
+                        <input id="toggle-all" type="checkbox">
+                        <label for="toggle-all">Mark all as complete</label>
+                        
+                        <ul id="todo-list">
+                          <img src='images/spinner.gif' class='spinner' />
+                        </ul>
+                      </div>
+
+                      <div id="todo-stats"></div>
+                    </div>
+                  </script>
+
+                  <script type="text/template" id="item-template">
+                    <li class="<%= done ? 'completed' : '' %>">
+                <div class="view">
+                  <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %>>
+                  <label class="todo-content"><%= content %></label>
+                  <button class="todo-destroy"></button>
+                </div>
+                <input class="edit" value="<%= content %>">
+                    </li>
+                  </script>
+
+                  <script type="text/template" id="stats-template">
+                    <footer id="footer">
+                <span id="todo-count"><strong><%= remaining %></strong> <%= remaining == 1 ? 'item' : 'items' %> left</span>
+                <ul id="filters">
+                  <li>
+                    <a href="javascript:void(0)" id="all" class="selected">All</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" id="active">Active</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)" id="completed">Completed</a>
+                  </li>
+                </ul>
+                <button id="clear-completed">Clear completed (<%= done %>)</button>
+                    </footer>
+
+                  </script>
+
+            </div>
+
+            <div id="page2" class="transition page stage-right">
+                <h1>Page 2</h1>
+            </div>
+
+        </div>
+    
+
+<script src="js/zepto.min.js"></script>
+<!-- <script src="iscroll.js"></script> -->
+<script src="js/swipe.js"></script>
+    </div>
+</body>
+</html>

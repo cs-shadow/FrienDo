@@ -1,0 +1,41 @@
+body
+{
+	background-color: #3B5998;
+}
+
+.login
+{
+	width: 80%;
+	margin-left: 10%;
+}
+
+input
+{
+	margin: 0;
+	margin-bottom: 10px;
+	width: 100%;
+	display: block;
+	padding: 5px;
+	font-size: 18px;
+}
+
+#signup-submit, #login-submit
+{
+	width: 90%;
+	padding: 10px;
+	margin: 0;
+	margin-left: 5%;
+}
+
+.login-form, .signup-form
+{
+	background-color: #7B99C8 ;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+h2
+{
+	margin: 0;
+	margin-bottom: 20px;
+}

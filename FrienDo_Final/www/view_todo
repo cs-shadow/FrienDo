@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/new2.js"></script>
+</head>
+<body>
+    <form class="all-broadcast-form" id="all-broadcast-form" method="post">      
+          <ul id = 'blist'>
+            
+          </ul>
+    </form>
+</body>
+<script>
+$( document ).ready(function() {
+  all_broad();
+});
+</script>
+</html>

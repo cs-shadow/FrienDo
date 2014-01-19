@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Parse JavaScript Todo App</title>
+    <!-- <link href="css/todos.css" media="all" rel="stylesheet" type="text/css"/> -->
+    <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="css/new.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/new1.js"></script>
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.0rc2.css" type="text/css" charset="utf-8" />
+    <script src="jquery.mobile/jquery.mobile-1.0rc2.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Todo App Interface -->
+
+    <div id="todoapp">
+      <div class="title">
+        <h1>Friendo</h1>
+      </div>
+
+      <div class="content" id='view'>
+      </div>
+    </div>
+
+
+    <!-- Templates -->
+
+    <!--<script type="text/template" id="login-template">-->
+      <header id="header"></header>
+      <div class="login">
+        <form class="login-form" id="login-form" name = 'login-form' method="post">
+          <h2>Log In</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="login-username" placeholder="Username" name = 'username'/>
+          <input type="password" id="login-password" placeholder="Password" name = 'password' />
+          <input type='submit' value='Log In' id='login-submit'/>
+        </form>
+
+        <form class="signup-form" id="signup-form" name = 'signup-form' method="post">
+          <h2>Sign Up</h2>
+          <div class="error" style="display:none"></div>
+          <input type="text" id="signup-username" placeholder="Username"  name = 'username'/>
+          <input type="email" id="signup-email" placeholder="E-mail"  name = 'email'/>
+          <input type="password" id="signup-password" placeholder="Create a Password"  name = 'password'/>
+          <input type='submit' value='Sign Up' id='signup-submit'/>
+        </form>
+      </div>
+
+<script type = 'text/javascript'>
+$(document).ready(function(){
+  var user = localStorage.getItem('username');
+  var pass = localStorage.getItem('password');
+
+  if(user != null && pass != null && user != 'null' && pass != 'null')
+  {
+    window.location.assign("submit.html");
+  }
+
+});
+</script>
+
+    <!--</script>-->
+<!--
+    <script type="text/template" id="manage-todos-template">
+      <div id="user-info">
+        Signed in as <%= Parse.User.current().get("username") %> (<a href="#" class="log-out">Log out</a>)
+      </div>
+
+      <div class="section">
+
+        <header id="header">
+          <input id="new-todo" placeholder="What needs to be done?" type="text" />
+        </header>
+
+        <div id="main">
+          <input id="toggle-all" type="checkbox">
+          <label for="toggle-all">Mark all as complete</label>
+          
+          <ul id="todo-list">
+            <img src='images/spinner.gif' class='spinner' />
+          </ul>
+        </div>
+
+        <div id="todo-stats"></div>
+      </div>
+    </script>
+
+    <script type="text/template" id="item-template">
+      <li class="<%= done ? 'completed' : '' %>">
+  <div class="view">
+    <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %>>
+    <label class="todo-content"><%= content %></label>
+    <button class="todo-destroy"></button>
+  </div>
+  <input class="edit" value="<%= content %>">
+      </li>
+    </script>
+
+    <script type="text/template" id="stats-template">
+      <footer id="footer">
+  <span id="todo-count"><strong><%= remaining %></strong> <%= remaining == 1 ? 'item' : 'items' %> left</span>
+  <ul id="filters">
+    <li>
+      <a href="javascript:void(0)" id="all" class="selected">All</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" id="active">Active</a>
+    </li>
+    <li>
+      <a href="javascript:void(0)" id="completed">Completed</a>
+    </li>
+  </ul>
+  <button id="clear-completed">Clear completed (<%= done %>)</button>
+      </footer>
+    </script>
+    <script type="text/javascript">
+      Parse.initialize("FVpie19EZBySUXoKGLZn8wHD3powe0b6LiHSJRNE", "ze72Ly718Zhw39qLU0RJy2qq04Jhyw0zsACCCWAw");
+    </script>-->
+
+    <script>
+ 
+    
+</script>
+ 
+</body>
+</html>
+
+  </body>
+
+</html>

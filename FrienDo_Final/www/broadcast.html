@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+   <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/new2.js"></script>
+    
+  <link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+
+function send_broadcast()
+{
+  var promisesPhase1 = [];
+
+  var mes = document.forms["broadcast-form"]["broadcast-form"].value;
+  var des = document.forms["broadcast-form"]["text-area"].value;
+  var usnm = localStorage.getItem('username');
+  //alert(mes +","+ des);
+  var Employee = Parse.Object.extend({
+className: "Broadcast"
+});
+
+var EmployeeCollection = Parse.Collection.extend({
+model: Employee
+});
+
+var employees = new EmployeeCollection(
+    [
+    {"Message": mes, "Description": des , "User" : usnm}
+    ]
+    );
+
+employees.each(function(employee) {
+    promisesPhase1.push(employee.save());
+    });
+
+ alert("Item Added");
+ location.reload('broadcast.html');
+
+}
+</script>
+
+</head>
+<body>
+      <style type="text/css">
+body
+{
+background-color: #E4E4E4;
+}
+</style>
+
+  <a class="btn btn-primary btn-block btn-lg" href="submit.html">Home</a>
+
+  <h2>Add Broadcast Item</h2>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+    $("#broadcast-form").submit(function(e){
+      e.preventDefault();
+      send_broadcast();
+      });
+    });
+    </script>
+	<form class="broadcast-form" id="broadcast-form">      
+          <input type="text" id="broadcst-message" name = 'broadcast-form' placeholder="Title"  name = 'message'/>
+          <textarea rows="4" cols="30" name='text-area'></textarea>
+          <input type='submit' value='Send' >
+    </form>
+
+
+<h2>All Broadcast items</h2>
+          <ul id = 'blist'>
+            
+          </ul>
+</body>
+<script>
+$( document ).ready(function() {
+  all_broad();
+});
+</script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    
+    <script src="js/new2.js"></script>
+</body>
+</html>

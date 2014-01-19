@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+    <script src="js/underscore-1.1.6.js"></script>
+    <script src="js/parse.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+    Parse.initialize("FVpie19EZBySUXoKGLZn8wHD3powe0b6LiHSJRNE", "ze72Ly718Zhw39qLU0RJy2qq04Jhyw0zsACCCWAw"); 
+    function test() {
+        //alert("test");
+    var cboxes = document.getElementById('contacts');
+    // alert(JSON.stringify($('#contacts')[0]));
+    var len = cboxes.length;
+    var usertodo=[];
+    var usertodo1=[];
+    for (var i=0; i<len; i++) {
+       if(cboxes[i].checked){
+        usertodo.push(cboxes[i].name);
+        usertodo1.push(cboxes[i].value);
+    }
+        //alert(cboxes[i].name);
+    }
+       //alert(i + (cboxes[i].checked?' checked ':' unchecked ') + cboxes[i].value);
+       console.log("here " + usertodo1);
+          var promisesPhase2 = [];
+          var uname1 = window.localStorage["username"];
+          //var passwd = document.forms["signup-form"]["password"].value;
+          //var email = document.forms["signup-form"]["email"].value;
+          var Employee1 = Parse.Object.extend({
+              className: "TodoFriends"
+          });
+          var EmployeeCollection1 = Parse.Collection.extend({
+              model: Employee1
+          });
+          var employees1 = new EmployeeCollection1(
+              [
+              {"Name" : uname1, "friends" :usertodo1 , "email" : usertodo}
+              ]
+          );
+          console.log(JSON.stringify(employees1));
+          // Pass 1: Save basic employee information
+          employees1.each(function(employee1) {
+              promisesPhase2.push(employee1.save());
+          });
+          alert("Friends Added!");
+   // alert("here");
+   }
+
+   </script>
+ 
+ 
+   
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+   
+        <title>Contact Example</title>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+ 
+ 
+        <script type="text/javascript" src="js/new3.js"></script>
+       <!-- <script type="text/javascript" src="js/new4.js"></script>-->
+    </head>
+ 
+    <body>
+ <style type="text/css">
+body
+{
+background-color: #E4E4E4;
+}
+</style>
+<a class="btn btn-primary btn-block btn-lg" href="submit.html">Home</a>
+
+        <h3>Contacts</h3>
+        <form id='contacts'></form>
+    </body>
+ 
+           
+</html>

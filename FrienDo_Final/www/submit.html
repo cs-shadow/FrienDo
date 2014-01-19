@@ -1,0 +1,42 @@
+<html>
+<head>
+<link href="css/bootstrap.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<style type="text/css">
+body
+{
+background-color: #E4E4E4;
+}
+</style>
+<form class="submit-form" id="submit-form" name="submit-form">
+
+<button type="submit" class="btn btn-primary btn-lg btn-block" value="logout" id="buttonlogout" name="buttonlogout">Logout</button>
+
+<br />
+
+<div id="try"></div>
+<script type="text/javascript">
+var user = localStorage.getItem('username');
+var pass = localStorage.getItem('password');
+$("#try").append(user);
+</script>
+
+<a class="btn btn-default btn-block btn-lg" href="todo.html">To-Do Items</a>
+
+
+<a class="btn btn-default btn-block btn-lg" href="broadcast.html">Broadcast Items</a>
+<a class="btn btn-default btn-block btn-lg" href="contacts.html">Contacts</a>
+
+</form>
+
+<script src = "js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/underscore-1.1.6.js"></script>
+<script src="js/parse.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src = "js/new1.js"></script>
+
+</body>
+
+</html>
